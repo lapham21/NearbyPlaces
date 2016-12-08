@@ -1,0 +1,650 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		115185593D486BD45BD11E55 /* Pods_NearbyPlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A40893DEA8C5C28BF13B79B /* Pods_NearbyPlaces.framework */; };
+		1257133361EAC1C06679254D /* Pods_NearbyPlacesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E4F7D149E725C79E899AED /* Pods_NearbyPlacesTests.framework */; };
+		697755381DF9A272004CE084 /* NearbyPlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697755361DF9A272004CE084 /* NearbyPlaceTableViewCell.swift */; };
+		697755391DF9A272004CE084 /* NearbyPlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 697755371DF9A272004CE084 /* NearbyPlaceTableViewCell.xib */; };
+		6977553B1DF9A288004CE084 /* NearbyPlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6977553A1DF9A288004CE084 /* NearbyPlaceViewModel.swift */; };
+		6977553D1DF9B036004CE084 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6977553C1DF9B036004CE084 /* Result.swift */; };
+		697755401DF9C13C004CE084 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6977553F1DF9C13C004CE084 /* LocationServices.swift */; };
+		697755431DF9D873004CE084 /* BackendRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697755421DF9D873004CE084 /* BackendRequest.swift */; };
+		697755451DF9D967004CE084 /* PlacesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697755441DF9D967004CE084 /* PlacesRequest.swift */; };
+		69C3114E1DF8C60B006577DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C3114D1DF8C60B006577DB /* AppDelegate.swift */; };
+		69C311551DF8C60B006577DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69C311541DF8C60B006577DB /* Assets.xcassets */; };
+		69C311581DF8C60B006577DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69C311561DF8C60B006577DB /* LaunchScreen.storyboard */; };
+		69C311631DF8C60C006577DB /* NearbyPlacesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C311621DF8C60C006577DB /* NearbyPlacesTests.swift */; };
+		69C311751DF8CACC006577DB /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C311741DF8CACC006577DB /* Place.swift */; };
+		69C3117F1DF8D3A6006577DB /* NearbyPlacesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C3117E1DF8D3A6006577DB /* NearbyPlacesViewModel.swift */; };
+		69C311831DF8D698006577DB /* UITableView+RegisterNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C311821DF8D698006577DB /* UITableView+RegisterNib.swift */; };
+		69C3118A1DF8FD41006577DB /* NearbyPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C311881DF8FD41006577DB /* NearbyPlacesViewController.swift */; };
+		69C3118B1DF8FD41006577DB /* NearbyPlacesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69C311891DF8FD41006577DB /* NearbyPlacesViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		69C3115F1DF8C60C006577DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 69C311421DF8C60B006577DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 69C311491DF8C60B006577DB;
+			remoteInfo = NearbyPlaces;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		12C51F1E7B657E01BB7B9433 /* Pods-NearbyPlacesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearbyPlacesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NearbyPlacesTests/Pods-NearbyPlacesTests.release.xcconfig"; sourceTree = "<group>"; };
+		3DB1C73F04221E662276E0FD /* Pods-NearbyPlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearbyPlaces.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NearbyPlaces/Pods-NearbyPlaces.debug.xcconfig"; sourceTree = "<group>"; };
+		44CAF3E55E0234420A29A9D1 /* Pods-NearbyPlacesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearbyPlacesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NearbyPlacesTests/Pods-NearbyPlacesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4DD3624EC9C2DBE6BD6FAEF7 /* Pods-NearbyPlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearbyPlaces.release.xcconfig"; path = "Pods/Target Support Files/Pods-NearbyPlaces/Pods-NearbyPlaces.release.xcconfig"; sourceTree = "<group>"; };
+		697755361DF9A272004CE084 /* NearbyPlaceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NearbyPlaceTableViewCell.swift; path = Controllers/NearbyPlaceTableViewCell.swift; sourceTree = "<group>"; };
+		697755371DF9A272004CE084 /* NearbyPlaceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NearbyPlaceTableViewCell.xib; path = Controllers/NearbyPlaceTableViewCell.xib; sourceTree = "<group>"; };
+		6977553A1DF9A288004CE084 /* NearbyPlaceViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NearbyPlaceViewModel.swift; path = ViewModels/NearbyPlaceViewModel.swift; sourceTree = "<group>"; };
+		6977553C1DF9B036004CE084 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		6977553F1DF9C13C004CE084 /* LocationServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationServices.swift; sourceTree = "<group>"; };
+		697755421DF9D873004CE084 /* BackendRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackendRequest.swift; sourceTree = "<group>"; };
+		697755441DF9D967004CE084 /* PlacesRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlacesRequest.swift; path = Networking/PlacesRequest.swift; sourceTree = "<group>"; };
+		69C3114A1DF8C60B006577DB /* NearbyPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearbyPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		69C3114D1DF8C60B006577DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		69C311541DF8C60B006577DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		69C311571DF8C60B006577DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		69C311591DF8C60B006577DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69C3115E1DF8C60C006577DB /* NearbyPlacesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NearbyPlacesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		69C311621DF8C60C006577DB /* NearbyPlacesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyPlacesTests.swift; sourceTree = "<group>"; };
+		69C311641DF8C60C006577DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69C311741DF8CACC006577DB /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Place.swift; path = Model/Place.swift; sourceTree = "<group>"; };
+		69C3117E1DF8D3A6006577DB /* NearbyPlacesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NearbyPlacesViewModel.swift; path = ViewModels/NearbyPlacesViewModel.swift; sourceTree = "<group>"; };
+		69C311821DF8D698006577DB /* UITableView+RegisterNib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITableView+RegisterNib.swift"; path = "Extensions/UITableView+RegisterNib.swift"; sourceTree = "<group>"; };
+		69C311881DF8FD41006577DB /* NearbyPlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NearbyPlacesViewController.swift; path = Controllers/NearbyPlacesViewController.swift; sourceTree = "<group>"; };
+		69C311891DF8FD41006577DB /* NearbyPlacesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NearbyPlacesViewController.xib; path = Controllers/NearbyPlacesViewController.xib; sourceTree = "<group>"; };
+		8A40893DEA8C5C28BF13B79B /* Pods_NearbyPlaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NearbyPlaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9E4F7D149E725C79E899AED /* Pods_NearbyPlacesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NearbyPlacesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		69C311471DF8C60B006577DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				115185593D486BD45BD11E55 /* Pods_NearbyPlaces.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69C3115B1DF8C60C006577DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1257133361EAC1C06679254D /* Pods_NearbyPlacesTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		58FE909C23C27F4099E51EAC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3DB1C73F04221E662276E0FD /* Pods-NearbyPlaces.debug.xcconfig */,
+				4DD3624EC9C2DBE6BD6FAEF7 /* Pods-NearbyPlaces.release.xcconfig */,
+				44CAF3E55E0234420A29A9D1 /* Pods-NearbyPlacesTests.debug.xcconfig */,
+				12C51F1E7B657E01BB7B9433 /* Pods-NearbyPlacesTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6977553E1DF9C126004CE084 /* LocationServices */ = {
+			isa = PBXGroup;
+			children = (
+				6977553F1DF9C13C004CE084 /* LocationServices.swift */,
+			);
+			name = LocationServices;
+			sourceTree = "<group>";
+		};
+		697755411DF9D84B004CE084 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				697755421DF9D873004CE084 /* BackendRequest.swift */,
+				697755441DF9D967004CE084 /* PlacesRequest.swift */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		69C311411DF8C60B006577DB = {
+			isa = PBXGroup;
+			children = (
+				69C3114C1DF8C60B006577DB /* NearbyPlaces */,
+				69C311611DF8C60C006577DB /* NearbyPlacesTests */,
+				69C3114B1DF8C60B006577DB /* Products */,
+				58FE909C23C27F4099E51EAC /* Pods */,
+				EDB03232EF0CBBC81BDD2215 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		69C3114B1DF8C60B006577DB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				69C3114A1DF8C60B006577DB /* NearbyPlaces.app */,
+				69C3115E1DF8C60C006577DB /* NearbyPlacesTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		69C3114C1DF8C60B006577DB /* NearbyPlaces */ = {
+			isa = PBXGroup;
+			children = (
+				69C3114D1DF8C60B006577DB /* AppDelegate.swift */,
+				69C311731DF8CAB0006577DB /* Model */,
+				69C311801DF8D3B3006577DB /* ViewModels */,
+				69C311721DF8CA9C006577DB /* Controllers */,
+				697755411DF9D84B004CE084 /* Networking */,
+				6977553E1DF9C126004CE084 /* LocationServices */,
+				69C311811DF8D679006577DB /* Extensions */,
+				69C3116D1DF8CA53006577DB /* Resources */,
+			);
+			path = NearbyPlaces;
+			sourceTree = "<group>";
+		};
+		69C311611DF8C60C006577DB /* NearbyPlacesTests */ = {
+			isa = PBXGroup;
+			children = (
+				69C311621DF8C60C006577DB /* NearbyPlacesTests.swift */,
+				69C311641DF8C60C006577DB /* Info.plist */,
+			);
+			path = NearbyPlacesTests;
+			sourceTree = "<group>";
+		};
+		69C3116D1DF8CA53006577DB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				69C311541DF8C60B006577DB /* Assets.xcassets */,
+				69C311561DF8C60B006577DB /* LaunchScreen.storyboard */,
+				69C311591DF8C60B006577DB /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		69C311721DF8CA9C006577DB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				69C311881DF8FD41006577DB /* NearbyPlacesViewController.swift */,
+				69C311891DF8FD41006577DB /* NearbyPlacesViewController.xib */,
+				697755361DF9A272004CE084 /* NearbyPlaceTableViewCell.swift */,
+				697755371DF9A272004CE084 /* NearbyPlaceTableViewCell.xib */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		69C311731DF8CAB0006577DB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				69C311741DF8CACC006577DB /* Place.swift */,
+				6977553C1DF9B036004CE084 /* Result.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		69C311801DF8D3B3006577DB /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				69C3117E1DF8D3A6006577DB /* NearbyPlacesViewModel.swift */,
+				6977553A1DF9A288004CE084 /* NearbyPlaceViewModel.swift */,
+			);
+			name = ViewModels;
+			sourceTree = "<group>";
+		};
+		69C311811DF8D679006577DB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				69C311821DF8D698006577DB /* UITableView+RegisterNib.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		EDB03232EF0CBBC81BDD2215 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8A40893DEA8C5C28BF13B79B /* Pods_NearbyPlaces.framework */,
+				D9E4F7D149E725C79E899AED /* Pods_NearbyPlacesTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		69C311491DF8C60B006577DB /* NearbyPlaces */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69C311671DF8C60C006577DB /* Build configuration list for PBXNativeTarget "NearbyPlaces" */;
+			buildPhases = (
+				ADD6F562AEDACDEC738687BE /* [CP] Check Pods Manifest.lock */,
+				69C311461DF8C60B006577DB /* Sources */,
+				69C311471DF8C60B006577DB /* Frameworks */,
+				69C311481DF8C60B006577DB /* Resources */,
+				7ACC355A4C495CAC03D0CAB8 /* [CP] Embed Pods Frameworks */,
+				87AC60CBDA7514C745277D4E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NearbyPlaces;
+			productName = NearbyPlaces;
+			productReference = 69C3114A1DF8C60B006577DB /* NearbyPlaces.app */;
+			productType = "com.apple.product-type.application";
+		};
+		69C3115D1DF8C60C006577DB /* NearbyPlacesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69C3116A1DF8C60C006577DB /* Build configuration list for PBXNativeTarget "NearbyPlacesTests" */;
+			buildPhases = (
+				F91063F0B28828BE3E7537E0 /* [CP] Check Pods Manifest.lock */,
+				69C3115A1DF8C60C006577DB /* Sources */,
+				69C3115B1DF8C60C006577DB /* Frameworks */,
+				69C3115C1DF8C60C006577DB /* Resources */,
+				459A3130DD7F93CB0FE97C7E /* [CP] Embed Pods Frameworks */,
+				04B32E83FEBC3552375F134C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				69C311601DF8C60C006577DB /* PBXTargetDependency */,
+			);
+			name = NearbyPlacesTests;
+			productName = NearbyPlacesTests;
+			productReference = 69C3115E1DF8C60C006577DB /* NearbyPlacesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		69C311421DF8C60B006577DB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "Nolan Lapham";
+				TargetAttributes = {
+					69C311491DF8C60B006577DB = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = QNT6PVDVYE;
+						ProvisioningStyle = Automatic;
+					};
+					69C3115D1DF8C60C006577DB = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = QNT6PVDVYE;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 69C311491DF8C60B006577DB;
+					};
+				};
+			};
+			buildConfigurationList = 69C311451DF8C60B006577DB /* Build configuration list for PBXProject "NearbyPlaces" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 69C311411DF8C60B006577DB;
+			productRefGroup = 69C3114B1DF8C60B006577DB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				69C311491DF8C60B006577DB /* NearbyPlaces */,
+				69C3115D1DF8C60C006577DB /* NearbyPlacesTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		69C311481DF8C60B006577DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69C311581DF8C60B006577DB /* LaunchScreen.storyboard in Resources */,
+				69C311551DF8C60B006577DB /* Assets.xcassets in Resources */,
+				697755391DF9A272004CE084 /* NearbyPlaceTableViewCell.xib in Resources */,
+				69C3118B1DF8FD41006577DB /* NearbyPlacesViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69C3115C1DF8C60C006577DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		04B32E83FEBC3552375F134C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NearbyPlacesTests/Pods-NearbyPlacesTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		459A3130DD7F93CB0FE97C7E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NearbyPlacesTests/Pods-NearbyPlacesTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7ACC355A4C495CAC03D0CAB8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NearbyPlaces/Pods-NearbyPlaces-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		87AC60CBDA7514C745277D4E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NearbyPlaces/Pods-NearbyPlaces-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ADD6F562AEDACDEC738687BE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F91063F0B28828BE3E7537E0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		69C311461DF8C60B006577DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69C311751DF8CACC006577DB /* Place.swift in Sources */,
+				697755401DF9C13C004CE084 /* LocationServices.swift in Sources */,
+				697755431DF9D873004CE084 /* BackendRequest.swift in Sources */,
+				69C3117F1DF8D3A6006577DB /* NearbyPlacesViewModel.swift in Sources */,
+				697755451DF9D967004CE084 /* PlacesRequest.swift in Sources */,
+				69C3118A1DF8FD41006577DB /* NearbyPlacesViewController.swift in Sources */,
+				69C311831DF8D698006577DB /* UITableView+RegisterNib.swift in Sources */,
+				6977553B1DF9A288004CE084 /* NearbyPlaceViewModel.swift in Sources */,
+				697755381DF9A272004CE084 /* NearbyPlaceTableViewCell.swift in Sources */,
+				6977553D1DF9B036004CE084 /* Result.swift in Sources */,
+				69C3114E1DF8C60B006577DB /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69C3115A1DF8C60C006577DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69C311631DF8C60C006577DB /* NearbyPlacesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		69C311601DF8C60C006577DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 69C311491DF8C60B006577DB /* NearbyPlaces */;
+			targetProxy = 69C3115F1DF8C60C006577DB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		69C311561DF8C60B006577DB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				69C311571DF8C60B006577DB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		69C311651DF8C60C006577DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		69C311661DF8C60C006577DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		69C311681DF8C60C006577DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DB1C73F04221E662276E0FD /* Pods-NearbyPlaces.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = QNT6PVDVYE;
+				INFOPLIST_FILE = NearbyPlaces/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.laphamOS.NearbyPlaces;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		69C311691DF8C60C006577DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DD3624EC9C2DBE6BD6FAEF7 /* Pods-NearbyPlaces.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = QNT6PVDVYE;
+				INFOPLIST_FILE = NearbyPlaces/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.laphamOS.NearbyPlaces;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		69C3116B1DF8C60C006577DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44CAF3E55E0234420A29A9D1 /* Pods-NearbyPlacesTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = QNT6PVDVYE;
+				INFOPLIST_FILE = NearbyPlacesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.laphamOS.NearbyPlacesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NearbyPlaces.app/NearbyPlaces";
+			};
+			name = Debug;
+		};
+		69C3116C1DF8C60C006577DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12C51F1E7B657E01BB7B9433 /* Pods-NearbyPlacesTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = QNT6PVDVYE;
+				INFOPLIST_FILE = NearbyPlacesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.laphamOS.NearbyPlacesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NearbyPlaces.app/NearbyPlaces";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		69C311451DF8C60B006577DB /* Build configuration list for PBXProject "NearbyPlaces" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69C311651DF8C60C006577DB /* Debug */,
+				69C311661DF8C60C006577DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69C311671DF8C60C006577DB /* Build configuration list for PBXNativeTarget "NearbyPlaces" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69C311681DF8C60C006577DB /* Debug */,
+				69C311691DF8C60C006577DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69C3116A1DF8C60C006577DB /* Build configuration list for PBXNativeTarget "NearbyPlacesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69C3116B1DF8C60C006577DB /* Debug */,
+				69C3116C1DF8C60C006577DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 69C311421DF8C60B006577DB /* Project object */;
+}
