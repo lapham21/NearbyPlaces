@@ -13,7 +13,7 @@ target 'NearbyPlaces' do
   pod 'RxSwift', '~> 3.0.0-beta.2'
   pod 'Alamofire', '~> 4.0'
   pod 'AlamofireImage', '~> 3.1'
-  pod 'Genome', '~> 3.0'
+  pod 'SwiftyJSON'
 
   target 'NearbyPlacesTests' do
     inherit! :search_paths

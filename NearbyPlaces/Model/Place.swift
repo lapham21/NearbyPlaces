@@ -6,15 +6,19 @@
 //  Copyright © 2016 Nolan Lapham. All rights reserved.
 //
 
-import Foundation
+import SwiftyJSON
 
 struct Place {
 	
-	//TODO Create Model from API
+	let name: String
+	let address: String
+	let photoReference: String?
 	
-	
-	
-	
-	
-	
+	init(json: [String : AnyObject])
+	{
+		let json = JSON(json)
+		name = json["name"].stringValue
+		address = json["vicinity"].stringValue
+		photoReference = json["photos"][0]["photo_reference"].string
+	}
 }

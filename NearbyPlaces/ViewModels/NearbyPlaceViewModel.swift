@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class NearbyPlaceViewModel {
 	
@@ -22,6 +23,16 @@ class NearbyPlaceViewModel {
 		
 	}
 	
+	func getPlaceImage(completion: @escaping (UIImage?) -> ()) {
+		
+		guard let photoReference = place.photoReference else { return }
+		
+		let request = BackendRequest()
+		request.requestImage(photoReference) { image in
+			guard let image = image else { return }
+			completion(image)
+		}
 	
+	}
 	
 }

@@ -8,7 +8,7 @@
 
 import Alamofire
 import CoreLocation
-import Genome
+import SwiftyJSON
 
 struct PlacesRequest {
 	
@@ -18,15 +18,14 @@ struct PlacesRequest {
 		request.request { response in
 			switch response.result {
 			case let .success(data):
-				do {
-					let dataNode = try data.makeNode()
-					guard let nearbyPlaceNode = dataNode["results"] else { return }
-					
-					let nearbyPlaces = try [Place](node: nearbyPlaceNode)
-					completion(.success(nearbyPlaces))
-				}
-				catch let error {
-					completion(.failure(error))
+				let json = JSON(data: data, options: JSONSerialization.ReadingOptions.mutableContainers, error:nil)
+				if let places = json["results"].arrayObject as? [[String : AnyObject]] {
+					var placesArray = [Place]()
+					for place in places {
+						let place = Place(json: place)
+						placesArray.append(place)
+					}
+					completion(.success(placesArray))
 				}
 			case let .failure(error):
 				completion(.failure(error))
@@ -34,10 +33,9 @@ struct PlacesRequest {
 		}
 	}
 	
-	init(latitude: CLLocationDegrees, longitude: CLLocationDegrees, token: String) {
+	init(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
 		
 		request = BackendRequest()
-		request.method = .post
 		request.parameters = [
 			"location" : "\(latitude), \(longitude)",
 			"radius" : 500,
@@ -46,5 +44,4 @@ struct PlacesRequest {
 		request.encoding = URLEncoding.queryString
 		
 	}
-	
 }

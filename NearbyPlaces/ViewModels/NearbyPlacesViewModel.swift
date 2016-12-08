@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class NearbyPlacesViewModel {
 	
@@ -29,7 +30,21 @@ class NearbyPlacesViewModel {
 	
 	func getNearbyPlaces(completion: @escaping () -> ()) {
 		
-	
+		guard let location = LocationService.sharedInstance.location.value else { return }
+		
+		let placesRequest = PlacesRequest(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+		
+		placesRequest.getNearbyPlaces { [weak self] result in
+			switch result {
+			case .success(let nearbyPlaces):
+				self?.places = nearbyPlaces
+				completion()
+			case .failure(let error):
+				print(error)
+				completion()
+			}
+
+		}
 		
 	}
 }

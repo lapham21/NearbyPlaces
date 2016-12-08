@@ -40,15 +40,20 @@ class NearbyPlacesViewController: UIViewController, UITableViewDataSource, UITab
 		tableView.tableFooterView = UIView()
 
 		viewModel.getNearbyPlaces { [weak self] in
-			self?.activityIndicator.stopAnimating()
-			self?.tableView.reloadData()
+			DispatchQueue.main.async {
+				self?.activityIndicator.stopAnimating()
+				self?.activityIndicator.isHidden = true
+				self?.tableView.reloadData()
+			}
 		}
 	}
 	
 	private func setupObservables() {
 		LocationService.sharedInstance.location.asObservable().subscribe({ [weak self] _ in
 			self?.viewModel.getNearbyPlaces {
-				self?.tableView.reloadData()
+				DispatchQueue.main.async {
+					self?.tableView.reloadData()
+				}
 			}
 		}).addDisposableTo(disposeBag)
 	}
@@ -69,8 +74,27 @@ class NearbyPlacesViewController: UIViewController, UITableViewDataSource, UITab
 	}
 	
 	func numberOfSections(in tableView: UITableView) -> Int {
-//		return viewModel.places.count
-		return 10
+		return viewModel.places.count
+	}
+	
+	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+		let cell = tableView.dequeueReusableCell(withIdentifier: "\(viewModel.cellType)")
+		guard let nearbyPlaceCell = cell as? NearbyPlaceTableViewCell else { return 580 }
+		
+		return nearbyPlaceCell.bounds.size.height
+	}
+	
+	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+		let view = UIView()
+		view.backgroundColor = UIColor.clear
+		return view
+	}
+	
+	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+		let cell = tableView.dequeueReusableCell(withIdentifier: "\(viewModel.cellType)")
+		guard let previousOutfitCell = cell as? NearbyPlaceTableViewCell else { return 15 }
+		
+		return previousOutfitCell.bounds.size.height * 0.02
 	}
 
 }

@@ -11,18 +11,26 @@ import RxSwift
 
 final class LocationService: NSObject, CLLocationManagerDelegate {
 	
+	// MARK: Variables
+	
+	private var locationManager = CLLocationManager()
+	private(set) var location = Variable<CLLocation?>(nil)
 	static let sharedInstance: LocationService = {
 		return LocationService()
 	}()
-	private(set) var location = Variable<CLLocation?>(nil)
-	private var locationManager = CLLocationManager()
+
+	// MARK: Init
 	
 	override init() {
 		super.init()
+
+		self.locationManager.delegate = self
 		
 		locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
 		locationManager.distanceFilter = 500
 	}
+	
+	// MARK: Authorization & Start Updating Location
 	
 	func startUpdatingLocation() {
 		let authorizationStatus = CLLocationManager.authorizationStatus()
@@ -35,8 +43,8 @@ final class LocationService: NSObject, CLLocationManagerDelegate {
 	// MARK: CLLocationManagerDelegate
 	
 	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-		guard let location = locations.last else { return }
 		
+		guard let location = locations.last else { return }
 		self.location.value = location
 		
 	}
@@ -44,5 +52,4 @@ final class LocationService: NSObject, CLLocationManagerDelegate {
 	func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
 		print(error)
 	}
-	
 }

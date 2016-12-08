@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		// Start monitoring location
 		LocationService.sharedInstance.startUpdatingLocation()
-		
+
 		// Show
 		let frame = UIScreen.main.bounds
 		window = UIWindow(frame: frame)
