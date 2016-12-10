@@ -20,6 +20,7 @@ class NearbyPlacesViewController: UIViewController, UITableViewDataSource, UITab
 	
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+	@IBOutlet weak var headerView: UIView!
 	
 	//MARK: Lifecycle
 	
@@ -27,18 +28,42 @@ class NearbyPlacesViewController: UIViewController, UITableViewDataSource, UITab
 		super.viewDidLoad()
 		
 		activityIndicator.startAnimating()
-		
 		setupTableView()
+		getNearbyPlaces()
 		setupObservables()
+	}
+	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
 		
+		setupHeaderView()
 	}
 	
 	//MARK: Setup
 	
+	override var prefersStatusBarHidden : Bool {
+		return true
+	}
+	
 	private func setupTableView() {
 		tableView.registerNib(of: NearbyPlaceTableViewCell.self)
 		tableView.tableFooterView = UIView()
-
+	}
+	
+	private func setupObservables() {
+		LocationService.sharedInstance.location.asObservable().subscribe({ [weak self] _ in
+			self?.getNearbyPlaces()
+		}).addDisposableTo(disposeBag)
+	}
+	
+	private func setupHeaderView() {
+		headerView.layer.borderWidth = 0.5
+		headerView.layer.borderColor = UIColor.gray.cgColor
+	}
+	
+	// MARK: Backend Request
+	
+	private func getNearbyPlaces() {
 		viewModel.getNearbyPlaces { [weak self] in
 			DispatchQueue.main.async {
 				self?.activityIndicator.stopAnimating()
@@ -46,16 +71,6 @@ class NearbyPlacesViewController: UIViewController, UITableViewDataSource, UITab
 				self?.tableView.reloadData()
 			}
 		}
-	}
-	
-	private func setupObservables() {
-		LocationService.sharedInstance.location.asObservable().subscribe({ [weak self] _ in
-			self?.viewModel.getNearbyPlaces {
-				DispatchQueue.main.async {
-					self?.tableView.reloadData()
-				}
-			}
-		}).addDisposableTo(disposeBag)
 	}
 	
 	// MARK: UITableViewDataSource
@@ -92,9 +107,9 @@ class NearbyPlacesViewController: UIViewController, UITableViewDataSource, UITab
 	
 	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "\(viewModel.cellType)")
-		guard let previousOutfitCell = cell as? NearbyPlaceTableViewCell else { return 15 }
+		guard let nearbyPlaceCell = cell as? NearbyPlaceTableViewCell else { return 8 }
 		
-		return previousOutfitCell.bounds.size.height * 0.02
+		return nearbyPlaceCell.bounds.size.height * 0.03
 	}
 
 }

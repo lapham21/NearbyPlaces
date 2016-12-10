@@ -6,14 +6,16 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NearbyPlacesViewController" customModule="NearbyPlaces" customModuleProvider="target">
             <connections>
                 <outlet property="activityIndicator" destination="j7O-f9-kEi" id="AZr-Z8-VxR"/>
+                <outlet property="headerView" destination="Bda-ZX-Dkq" id="hFu-Il-NX1"/>
                 <outlet property="tableView" destination="fFd-Pe-lrl" id="jCN-R6-Tts"/>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="iH3-EL-A1N"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -21,27 +23,48 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="j7O-f9-kEi">
-                    <rect key="frame" x="177" y="323" width="20" height="20"/>
-                </activityIndicatorView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bda-ZX-Dkq">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="87"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nearby Places" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eae-fX-GXr">
+                            <rect key="frame" x="130" y="33" width="114.5" height="21"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="0.49690271229999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="Eae-fX-GXr" firstAttribute="centerX" secondItem="Bda-ZX-Dkq" secondAttribute="centerX" id="5l1-Nj-Woe"/>
+                        <constraint firstItem="Eae-fX-GXr" firstAttribute="centerY" secondItem="Bda-ZX-Dkq" secondAttribute="centerY" id="ame-Aw-FBQ"/>
+                    </constraints>
+                </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fFd-Pe-lrl">
-                    <rect key="frame" x="10" y="0.0" width="355" height="667"/>
+                    <rect key="frame" x="10" y="87" width="355" height="580"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="9st-cH-Ixd"/>
                         <outlet property="delegate" destination="-1" id="q0A-9f-3bo"/>
                     </connections>
                 </tableView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="j7O-f9-kEi">
+                    <rect key="frame" x="177" y="323" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="Bda-ZX-Dkq" secondAttribute="trailing" id="8sG-Si-ysZ"/>
                 <constraint firstAttribute="trailing" secondItem="fFd-Pe-lrl" secondAttribute="trailing" constant="10" id="9Bm-lw-j2F"/>
                 <constraint firstItem="j7O-f9-kEi" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Btm-gL-XzD"/>
-                <constraint firstItem="fFd-Pe-lrl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="LTb-fA-a41"/>
+                <constraint firstItem="fFd-Pe-lrl" firstAttribute="top" secondItem="Bda-ZX-Dkq" secondAttribute="bottom" id="CSh-fA-P1t"/>
+                <constraint firstItem="Bda-ZX-Dkq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="U8F-Bc-5mN"/>
                 <constraint firstAttribute="bottom" secondItem="fFd-Pe-lrl" secondAttribute="bottom" id="VN8-Vb-urT"/>
+                <constraint firstItem="Bda-ZX-Dkq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bJU-yq-mFg"/>
                 <constraint firstItem="j7O-f9-kEi" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="ghN-6W-CV4"/>
                 <constraint firstItem="fFd-Pe-lrl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="kua-pX-AIs"/>
+                <constraint firstItem="Bda-ZX-Dkq" firstAttribute="height" secondItem="fFd-Pe-lrl" secondAttribute="height" multiplier="0.15" id="sQ9-i5-Jn7"/>
             </constraints>
+            <point key="canvasLocation" x="-289" y="43"/>
         </view>
     </objects>
 </document>

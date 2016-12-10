@@ -24,8 +24,7 @@ final class LocationService: NSObject, CLLocationManagerDelegate {
 	override init() {
 		super.init()
 
-		self.locationManager.delegate = self
-		
+		locationManager.delegate = self
 		locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
 		locationManager.distanceFilter = 500
 	}
@@ -43,10 +42,8 @@ final class LocationService: NSObject, CLLocationManagerDelegate {
 	// MARK: CLLocationManagerDelegate
 	
 	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-		
 		guard let location = locations.last else { return }
 		self.location.value = location
-		
 	}
 	
 	func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

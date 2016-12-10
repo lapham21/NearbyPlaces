@@ -14,9 +14,8 @@ struct Place {
 	let address: String
 	let photoReference: String?
 	
-	init(json: [String : AnyObject])
-	{
-		let json = JSON(json)
+	init(dictionary: [String : AnyObject]) {
+		let json = JSON(dictionary)
 		name = json["name"].stringValue
 		address = json["vicinity"].stringValue
 		photoReference = json["photos"][0]["photo_reference"].string

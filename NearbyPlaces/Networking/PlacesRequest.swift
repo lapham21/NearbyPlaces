@@ -22,7 +22,7 @@ struct PlacesRequest {
 				if let places = json["results"].arrayObject as? [[String : AnyObject]] {
 					var placesArray = [Place]()
 					for place in places {
-						let place = Place(json: place)
+						let place = Place(dictionary: place)
 						placesArray.append(place)
 					}
 					completion(.success(placesArray))
@@ -34,14 +34,12 @@ struct PlacesRequest {
 	}
 	
 	init(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
-		
 		request = BackendRequest()
 		request.parameters = [
 			"location" : "\(latitude), \(longitude)",
 			"radius" : 500,
-			"key" : "AIzaSyCzDdqS_-8bPX5FAjFDAhKt2DWOV8k3pPA"
+			"key" : "AIzaSyCzDdqS_-8bPX5FAjFDAhKt2DWOV8k3pPA",
 		]
 		request.encoding = URLEncoding.queryString
-		
 	}
 }

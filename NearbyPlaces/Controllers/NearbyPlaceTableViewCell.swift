@@ -34,20 +34,22 @@ class NearbyPlaceTableViewCell: UITableViewCell {
 		
 		nameLabel.text = viewModel?.place.name
 		placeImageView.image = nil
-		viewModel?.getPlaceImage { [weak self] image in
-			guard let image = image else { return }
+		viewModel?.getPlaceImage { [weak self] result in
 			DispatchQueue.main.async {
-				self?.placeImageView.image = image
+				switch result {
+				case .success(let image):
+					self?.placeImageView.image = image
+				case .failure( _):
+					self?.placeImageView.image = #imageLiteral(resourceName: "imageNotFound")
+				}
 			}
 		}
-		placeImageView.image = #imageLiteral(resourceName: "imageNotFound")
 	}
 	
-	private func setupBorder() {		
-		contentView.layer.cornerRadius = 5
-		contentView.layer.masksToBounds = true
-		contentView.layer.borderWidth = 0.5
-		contentView.layer.borderColor = UIColor.gray.cgColor
+	private func setupBorder() {
+		self.layer.cornerRadius = 5
+		self.layer.borderWidth = 0.5
+		self.layer.masksToBounds = true
+		self.layer.borderColor = UIColor.gray.cgColor
 	}
-	
 }

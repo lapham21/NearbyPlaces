@@ -21,30 +21,24 @@ class NearbyPlacesViewModel {
 	//MARK: Configure ViewModel for individual places
 	
 	func nearbyPlaceViewModel(for indexPath: IndexPath) -> NearbyPlaceViewModel {
-		
 		return NearbyPlaceViewModel(with: places[indexPath.section])
-		
 	}
 	
 	//MARK: GooglePlaces
 	
 	func getNearbyPlaces(completion: @escaping () -> ()) {
-		
 		guard let location = LocationService.sharedInstance.location.value else { return }
 		
 		let placesRequest = PlacesRequest(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-		
 		placesRequest.getNearbyPlaces { [weak self] result in
 			switch result {
 			case .success(let nearbyPlaces):
 				self?.places = nearbyPlaces
 				completion()
 			case .failure(let error):
+				guard let error = error else { return }
 				print(error)
-				completion()
 			}
-
 		}
-		
 	}
 }
