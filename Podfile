@@ -7,9 +7,6 @@ target 'NearbyPlaces' do
   use_frameworks!
 
   # Pods for NearbyPlaces
-  pod 'GooglePlaces'
-  pod 'GooglePlacePicker'
-  pod 'GoogleMaps'
   pod 'RxSwift', '~> 3.0.0-beta.2'
   pod 'Alamofire', '~> 4.0'
   pod 'AlamofireImage', '~> 3.1'

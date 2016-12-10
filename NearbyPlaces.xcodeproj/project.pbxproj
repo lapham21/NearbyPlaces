@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		115185593D486BD45BD11E55 /* Pods_NearbyPlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A40893DEA8C5C28BF13B79B /* Pods_NearbyPlaces.framework */; };
 		1257133361EAC1C06679254D /* Pods_NearbyPlacesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E4F7D149E725C79E899AED /* Pods_NearbyPlacesTests.framework */; };
+		694FD4481DFCA3A300341597 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694FD4471DFCA3A300341597 /* LocationServices.swift */; };
+		694FD44A1DFCA3B700341597 /* BackendRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694FD4491DFCA3B700341597 /* BackendRequest.swift */; };
+		694FD44C1DFCA3C400341597 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694FD44B1DFCA3C400341597 /* Result.swift */; };
 		697755381DF9A272004CE084 /* NearbyPlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697755361DF9A272004CE084 /* NearbyPlaceTableViewCell.swift */; };
 		697755391DF9A272004CE084 /* NearbyPlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 697755371DF9A272004CE084 /* NearbyPlaceTableViewCell.xib */; };
 		6977553B1DF9A288004CE084 /* NearbyPlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6977553A1DF9A288004CE084 /* NearbyPlaceViewModel.swift */; };
-		6977553D1DF9B036004CE084 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6977553C1DF9B036004CE084 /* Result.swift */; };
-		697755401DF9C13C004CE084 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6977553F1DF9C13C004CE084 /* LocationServices.swift */; };
-		697755431DF9D873004CE084 /* BackendRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697755421DF9D873004CE084 /* BackendRequest.swift */; };
 		697755451DF9D967004CE084 /* PlacesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697755441DF9D967004CE084 /* PlacesRequest.swift */; };
 		69C3114E1DF8C60B006577DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C3114D1DF8C60B006577DB /* AppDelegate.swift */; };
 		69C311551DF8C60B006577DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69C311541DF8C60B006577DB /* Assets.xcassets */; };
@@ -42,12 +42,12 @@
 		3DB1C73F04221E662276E0FD /* Pods-NearbyPlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearbyPlaces.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NearbyPlaces/Pods-NearbyPlaces.debug.xcconfig"; sourceTree = "<group>"; };
 		44CAF3E55E0234420A29A9D1 /* Pods-NearbyPlacesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearbyPlacesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NearbyPlacesTests/Pods-NearbyPlacesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4DD3624EC9C2DBE6BD6FAEF7 /* Pods-NearbyPlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearbyPlaces.release.xcconfig"; path = "Pods/Target Support Files/Pods-NearbyPlaces/Pods-NearbyPlaces.release.xcconfig"; sourceTree = "<group>"; };
+		694FD4471DFCA3A300341597 /* LocationServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationServices.swift; path = "Location Services/LocationServices.swift"; sourceTree = "<group>"; };
+		694FD4491DFCA3B700341597 /* BackendRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackendRequest.swift; path = Networking/BackendRequest.swift; sourceTree = "<group>"; };
+		694FD44B1DFCA3C400341597 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Model/Result.swift; sourceTree = "<group>"; };
 		697755361DF9A272004CE084 /* NearbyPlaceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NearbyPlaceTableViewCell.swift; path = Controllers/NearbyPlaceTableViewCell.swift; sourceTree = "<group>"; };
 		697755371DF9A272004CE084 /* NearbyPlaceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NearbyPlaceTableViewCell.xib; path = Controllers/NearbyPlaceTableViewCell.xib; sourceTree = "<group>"; };
 		6977553A1DF9A288004CE084 /* NearbyPlaceViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NearbyPlaceViewModel.swift; path = ViewModels/NearbyPlaceViewModel.swift; sourceTree = "<group>"; };
-		6977553C1DF9B036004CE084 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		6977553F1DF9C13C004CE084 /* LocationServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationServices.swift; sourceTree = "<group>"; };
-		697755421DF9D873004CE084 /* BackendRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackendRequest.swift; sourceTree = "<group>"; };
 		697755441DF9D967004CE084 /* PlacesRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlacesRequest.swift; path = Networking/PlacesRequest.swift; sourceTree = "<group>"; };
 		69C3114A1DF8C60B006577DB /* NearbyPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearbyPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69C3114D1DF8C60B006577DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 		6977553E1DF9C126004CE084 /* LocationServices */ = {
 			isa = PBXGroup;
 			children = (
-				6977553F1DF9C13C004CE084 /* LocationServices.swift */,
+				694FD4471DFCA3A300341597 /* LocationServices.swift */,
 			);
 			name = LocationServices;
 			sourceTree = "<group>";
@@ -108,7 +108,7 @@
 		697755411DF9D84B004CE084 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				697755421DF9D873004CE084 /* BackendRequest.swift */,
+				694FD4491DFCA3B700341597 /* BackendRequest.swift */,
 				697755441DF9D967004CE084 /* PlacesRequest.swift */,
 			);
 			name = Networking;
@@ -183,7 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				69C311741DF8CACC006577DB /* Place.swift */,
-				6977553C1DF9B036004CE084 /* Result.swift */,
+				694FD44B1DFCA3C400341597 /* Result.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -419,17 +419,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				694FD4481DFCA3A300341597 /* LocationServices.swift in Sources */,
 				69C311751DF8CACC006577DB /* Place.swift in Sources */,
-				697755401DF9C13C004CE084 /* LocationServices.swift in Sources */,
-				697755431DF9D873004CE084 /* BackendRequest.swift in Sources */,
 				69C3117F1DF8D3A6006577DB /* NearbyPlacesViewModel.swift in Sources */,
 				697755451DF9D967004CE084 /* PlacesRequest.swift in Sources */,
 				69C3118A1DF8FD41006577DB /* NearbyPlacesViewController.swift in Sources */,
+				694FD44A1DFCA3B700341597 /* BackendRequest.swift in Sources */,
 				69C311831DF8D698006577DB /* UITableView+RegisterNib.swift in Sources */,
 				6977553B1DF9A288004CE084 /* NearbyPlaceViewModel.swift in Sources */,
 				697755381DF9A272004CE084 /* NearbyPlaceTableViewCell.swift in Sources */,
-				6977553D1DF9B036004CE084 /* Result.swift in Sources */,
 				69C3114E1DF8C60B006577DB /* AppDelegate.swift in Sources */,
+				694FD44C1DFCA3C400341597 /* Result.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

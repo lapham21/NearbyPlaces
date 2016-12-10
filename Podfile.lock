@@ -2,37 +2,21 @@ PODS:
   - Alamofire (4.2.0)
   - AlamofireImage (3.2.0):
     - Alamofire (~> 4.1)
-  - GoogleMaps (2.1.1):
-    - GoogleMaps/Maps (= 2.1.1)
-  - GoogleMaps/Base (2.1.1)
-  - GoogleMaps/Maps (2.1.1):
-    - GoogleMaps/Base
-  - GooglePlacePicker (2.1.1):
-    - GoogleMaps (= 2.1.1)
-    - GooglePlaces (= 2.1.1)
-  - GooglePlaces (2.1.1):
-    - GoogleMaps/Base (= 2.1.1)
   - RxSwift (3.0.1)
   - SwiftyJSON (3.1.3)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - AlamofireImage (~> 3.1)
-  - GoogleMaps
-  - GooglePlacePicker
-  - GooglePlaces
   - RxSwift (~> 3.0.0-beta.2)
   - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
-  GoogleMaps: a5b5bbe47734e2443bde781a6aa64e69fdb6d785
-  GooglePlacePicker: 665f39f931f2df32f9dd3fcc45f7e8abf71e535c
-  GooglePlaces: 35636d86e5020cba3856eb988c09a5491de0a65a
   RxSwift: af5680055c4ad04480189c52d28385b1029493a6
   SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
 
-PODFILE CHECKSUM: ff2d6132ed6b89186529c57b2bfb3a043b8b483b
+PODFILE CHECKSUM: 2408d2a5f236043d2aeb3d10d77b40658de664ad
 
 COCOAPODS: 1.1.1
