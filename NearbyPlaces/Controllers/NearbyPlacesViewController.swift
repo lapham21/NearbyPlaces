@@ -20,6 +20,7 @@ class NearbyPlacesViewController: UIViewController, UITableViewDataSource, UITab
 	
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+	@IBOutlet weak var headerView: UIView!
 	
 	//MARK: Lifecycle
 	
@@ -27,30 +28,49 @@ class NearbyPlacesViewController: UIViewController, UITableViewDataSource, UITab
 		super.viewDidLoad()
 		
 		activityIndicator.startAnimating()
-		
 		setupTableView()
+		getNearbyPlaces()
 		setupObservables()
+	}
+	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
 		
+		setupHeaderView()
 	}
 	
 	//MARK: Setup
 	
+	override var prefersStatusBarHidden : Bool {
+		return true
+	}
+	
 	private func setupTableView() {
 		tableView.registerNib(of: NearbyPlaceTableViewCell.self)
 		tableView.tableFooterView = UIView()
-
-		viewModel.getNearbyPlaces { [weak self] in
-			self?.activityIndicator.stopAnimating()
-			self?.tableView.reloadData()
-		}
 	}
 	
 	private func setupObservables() {
 		LocationService.sharedInstance.location.asObservable().subscribe({ [weak self] _ in
-			self?.viewModel.getNearbyPlaces {
+			self?.getNearbyPlaces()
+		}).addDisposableTo(disposeBag)
+	}
+	
+	private func setupHeaderView() {
+		headerView.layer.borderWidth = 0.5
+		headerView.layer.borderColor = UIColor.gray.cgColor
+	}
+	
+	// MARK: Backend Request
+	
+	private func getNearbyPlaces() {
+		viewModel.getNearbyPlaces { [weak self] in
+			DispatchQueue.main.async {
+				self?.activityIndicator.stopAnimating()
+				self?.activityIndicator.isHidden = true
 				self?.tableView.reloadData()
 			}
-		}).addDisposableTo(disposeBag)
+		}
 	}
 	
 	// MARK: UITableViewDataSource
@@ -69,8 +89,27 @@ class NearbyPlacesViewController: UIViewController, UITableViewDataSource, UITab
 	}
 	
 	func numberOfSections(in tableView: UITableView) -> Int {
-//		return viewModel.places.count
-		return 10
+		return viewModel.places.count
+	}
+	
+	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+		let cell = tableView.dequeueReusableCell(withIdentifier: "\(viewModel.cellType)")
+		guard let nearbyPlaceCell = cell as? NearbyPlaceTableViewCell else { return 580 }
+		
+		return nearbyPlaceCell.bounds.size.height
+	}
+	
+	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+		let view = UIView()
+		view.backgroundColor = UIColor.clear
+		return view
+	}
+	
+	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+		let cell = tableView.dequeueReusableCell(withIdentifier: "\(viewModel.cellType)")
+		guard let nearbyPlaceCell = cell as? NearbyPlaceTableViewCell else { return 8 }
+		
+		return nearbyPlaceCell.bounds.size.height * 0.03
 	}
 
 }

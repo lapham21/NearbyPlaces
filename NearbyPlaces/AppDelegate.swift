@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,14 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		
-		// GooglePlaces API key
-		let googlePlacesAPIKey = "AIzaSyD97OiYYcVpNO0zDD1BapcYxc7ykIC4KWg"
-		GMSPlacesClient.provideAPIKey(googlePlacesAPIKey)
-		
 		// Start monitoring location
 		LocationService.sharedInstance.startUpdatingLocation()
-		
-		// Show
+
 		let frame = UIScreen.main.bounds
 		window = UIWindow(frame: frame)
 		

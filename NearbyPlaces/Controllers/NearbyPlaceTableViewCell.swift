@@ -16,7 +16,8 @@ class NearbyPlaceTableViewCell: UITableViewCell {
 	
 	//MARK: IBOutlets
 
-	
+	@IBOutlet weak var nameLabel: UILabel!
+	@IBOutlet weak var placeImageView: UIImageView!
 	
 	//MARK: Lifecycle
 	
@@ -31,19 +32,24 @@ class NearbyPlaceTableViewCell: UITableViewCell {
 	func configure(with nearbyPlaceViewModel: NearbyPlaceViewModel) {
 		self.viewModel = nearbyPlaceViewModel
 		
-		//TODO Set all the IBOutlet values with real values coming from the viewModel
-		
+		nameLabel.text = viewModel?.place.name
+		placeImageView.image = nil
+		viewModel?.getPlaceImage { [weak self] result in
+			DispatchQueue.main.async {
+				switch result {
+				case .success(let image):
+					self?.placeImageView.image = image
+				case .failure( _):
+					self?.placeImageView.image = #imageLiteral(resourceName: "imageNotFound")
+				}
+			}
+		}
 	}
 	
 	private func setupBorder() {
-//		let maskLayer = CAShapeLayer()
-//		maskLayer.path = UIBezierPath(roundedRect: bounds, byRoundingCorners: [.topRight, .topLeft], cornerRadii: CGSize(width: 5, height: 5)).cgPath
-//		outfitImageView.layer.mask = maskLayer
-		
-		contentView.layer.cornerRadius = 5
-		contentView.layer.masksToBounds = true
-		contentView.layer.borderWidth = 0.5
-		contentView.layer.borderColor = UIColor.gray.cgColor
+		self.layer.cornerRadius = 5
+		self.layer.borderWidth = 0.5
+		self.layer.masksToBounds = true
+		self.layer.borderColor = UIColor.gray.cgColor
 	}
-	
 }
