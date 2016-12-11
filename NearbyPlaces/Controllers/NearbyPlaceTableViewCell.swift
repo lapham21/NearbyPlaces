@@ -38,8 +38,8 @@ class NearbyPlaceTableViewCell: UITableViewCell {
 			DispatchQueue.main.async {
 				switch result {
 				case .success(let image):
-					self?.viewModel?.place.image = image
-					self?.placeImageView.image = self?.viewModel?.place.image
+					self?.viewModel?.place.photo = image
+					self?.placeImageView.image = self?.viewModel?.place.photo
 				case .failure( _):
 					self?.placeImageView.image = #imageLiteral(resourceName: "imageNotFound")
 				}
