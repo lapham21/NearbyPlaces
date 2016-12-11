@@ -13,11 +13,15 @@ struct Place {
 	let name: String
 	let address: String
 	let photoReference: String?
+	var image: UIImage?
 	
 	init(dictionary: [String : AnyObject]) {
 		let json = JSON(dictionary)
 		name = json["name"].stringValue
 		address = json["vicinity"].stringValue
 		photoReference = json["photos"][0]["photo_reference"].string
+		
+		//TODO not make from nil.. make call here?
+		image = nil
 	}
 }
