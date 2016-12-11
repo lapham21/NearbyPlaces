@@ -64,7 +64,7 @@
                 <constraint firstItem="fFd-Pe-lrl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="kua-pX-AIs"/>
                 <constraint firstItem="Bda-ZX-Dkq" firstAttribute="height" secondItem="fFd-Pe-lrl" secondAttribute="height" multiplier="0.15" id="sQ9-i5-Jn7"/>
             </constraints>
-            <point key="canvasLocation" x="-289" y="43"/>
+            <point key="canvasLocation" x="89" y="-7"/>
         </view>
     </objects>
 </document>

@@ -18,23 +18,5 @@ class NearbyPlaceViewModel {
 	
 	init(with place: Place) {
 		self.place = place
-	}
-	
-	//MARK: Get Image of Place
-	
-	func getPlaceImage(completion: @escaping (Result<UIImage>) -> ()) {
-		guard let photoReference = place.photoReference else {
-			completion(.failure(nil))
-			return
-		}
-		
-		let request = BackendRequest()
-		request.requestImage(photoReference) { image in
-			if let image = image {
-				completion(.success(image))
-			} else {
-				completion(.failure(nil))
-			}
-		}
-	}
+	}	
 }

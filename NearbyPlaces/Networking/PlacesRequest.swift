@@ -9,6 +9,7 @@
 import Alamofire
 import CoreLocation
 import SwiftyJSON
+import RxSwift
 
 struct PlacesRequest {
 	
@@ -20,9 +21,18 @@ struct PlacesRequest {
 			case let .success(data):
 				let json = JSON(data: data, options: JSONSerialization.ReadingOptions.mutableContainers, error:nil)
 				if let places = json["results"].arrayObject as? [[String : AnyObject]] {
+					
 					var placesArray = [Place]()
 					for place in places {
-						let place = Place(dictionary: place)
+						var place = Place(dictionary: place)
+						if let photoReference = place.photoReference {
+							self.request.requestImage(photoReference) { image in
+								place.photo.value = image
+								place.photoReceivedFromBackEnd = true
+							}
+						} else {
+							place.photoReceivedFromBackEnd = true
+						}
 						placesArray.append(place)
 					}
 					completion(.success(placesArray))

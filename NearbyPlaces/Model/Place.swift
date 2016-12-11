@@ -7,13 +7,15 @@
 //
 
 import SwiftyJSON
+import RxSwift
 
 struct Place {
 	
 	let name: String
 	let address: String
 	let photoReference: String?
-	var photo: UIImage?
+	private(set) var photo = Variable<UIImage?>(nil)
+	var photoReceivedFromBackEnd = false
 	
 	init(dictionary: [String : AnyObject]) {
 		let json = JSON(dictionary)

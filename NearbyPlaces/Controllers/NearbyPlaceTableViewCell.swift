@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import RxSwift
 
 class NearbyPlaceTableViewCell: UITableViewCell {
 
 	//MARK: Variables
 	
 	var viewModel: NearbyPlaceViewModel?
+	private var disposeBag = DisposeBag()
 	
 	//MARK: IBOutlets
 
@@ -25,6 +27,7 @@ class NearbyPlaceTableViewCell: UITableViewCell {
 		super.layoutSubviews()
 		
 		setupBorder()
+		setupObservables()
 	}
 	
 	//MARK: Setup
@@ -34,17 +37,6 @@ class NearbyPlaceTableViewCell: UITableViewCell {
 		
 		nameLabel.text = viewModel?.place.name
 		placeImageView.image = nil
-		viewModel?.getPlaceImage { [weak self] result in
-			DispatchQueue.main.async {
-				switch result {
-				case .success(let image):
-					self?.viewModel?.place.photo = image
-					self?.placeImageView.image = self?.viewModel?.place.photo
-				case .failure( _):
-					self?.placeImageView.image = #imageLiteral(resourceName: "imageNotFound")
-				}
-			}
-		}
 	}
 	
 	private func setupBorder() {
@@ -52,5 +44,18 @@ class NearbyPlaceTableViewCell: UITableViewCell {
 		self.layer.borderWidth = 0.5
 		self.layer.masksToBounds = true
 		self.layer.borderColor = UIColor.gray.cgColor
+	}
+	
+	private func setupObservables() {
+		viewModel?.place.photo.asObservable().subscribe({ [weak self] _ in
+			if let photo = self?.viewModel?.place.photo.value {
+				self?.placeImageView.image = photo
+			} else {
+				guard let received = self?.viewModel?.place.photoReceivedFromBackEnd else { return }
+				if received {
+					self?.placeImageView.image = #imageLiteral(resourceName: "imageNotFound")
+				}
+			}
+		}).addDisposableTo(disposeBag)
 	}
 }
