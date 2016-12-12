@@ -16,6 +16,7 @@ struct Place {
 	let photoReference: String?
 	private(set) var photo = Variable<UIImage?>(nil)
 	var photoReceivedFromBackEnd = false
+	var nextPageToken: String?
 	
 	init(dictionary: [String : AnyObject]) {
 		let json = JSON(dictionary)

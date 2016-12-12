@@ -64,8 +64,9 @@ class NearbyPlacesViewController: UIViewController, UITableViewDataSource, UITab
 	// MARK: Backend Request
 	
 	private func getNearbyPlaces() {
-		viewModel.getNearbyPlaces { [weak self] in
-			DispatchQueue.main.async {
+		viewModel.places.removeAll()
+		viewModel.getNearbyPlaces {
+			DispatchQueue.main.async { [weak self] in
 				self?.activityIndicator.stopAnimating()
 				self?.activityIndicator.isHidden = true
 				self?.tableView.reloadData()
@@ -84,12 +85,26 @@ class NearbyPlacesViewController: UIViewController, UITableViewDataSource, UITab
 		return nearbyPlaceCell
 	}
 	
+	func numberOfSections(in tableView: UITableView) -> Int {
+		return viewModel.places.count
+	}
+	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return 1
 	}
 	
-	func numberOfSections(in tableView: UITableView) -> Int {
-		return viewModel.places.count
+	// Get next 20 places (if possible) when user scrolls to the bottom
+	
+	func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+		let placesCount = viewModel.places.count - 1
+		if indexPath.section == placesCount {
+			let token = viewModel.places[placesCount].nextPageToken
+			viewModel.getNearbyPlaces(nextPageToken: token) {
+				DispatchQueue.main.async { [weak self] in
+					self?.tableView.reloadData()
+				}
+			}
+		}
 	}
 	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -111,5 +126,5 @@ class NearbyPlacesViewController: UIViewController, UITableViewDataSource, UITab
 		
 		return nearbyPlaceCell.bounds.size.height * 0.03
 	}
-
+	
 }

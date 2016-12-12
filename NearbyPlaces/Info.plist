@@ -34,5 +34,7 @@
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Please provide NearbyPlaces access to continue.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Please provide NearbyPlaces access.</string>
 </dict>
 </plist>

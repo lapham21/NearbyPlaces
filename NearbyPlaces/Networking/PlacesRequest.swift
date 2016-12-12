@@ -20,11 +20,13 @@ struct PlacesRequest {
 			switch response.result {
 			case let .success(data):
 				let json = JSON(data: data, options: JSONSerialization.ReadingOptions.mutableContainers, error:nil)
-				if let places = json["results"].arrayObject as? [[String : AnyObject]] {
+				if let places = json["results"].arrayObject as? [[String : AnyObject]],
+					let nextPageToken = json["next_page_token"].string {
 					
 					var placesArray = [Place]()
 					for place in places {
 						var place = Place(dictionary: place)
+						place.nextPageToken = nextPageToken
 						if let photoReference = place.photoReference {
 							self.request.requestImage(photoReference) { image in
 								place.photo.value = image
@@ -43,13 +45,16 @@ struct PlacesRequest {
 		}
 	}
 	
-	init(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
+	init(latitude: CLLocationDegrees, longitude: CLLocationDegrees, nextPageToken: String? = nil) {
 		request = BackendRequest()
 		request.parameters = [
 			"location" : "\(latitude), \(longitude)",
 			"radius" : 500,
 			"key" : "AIzaSyCzDdqS_-8bPX5FAjFDAhKt2DWOV8k3pPA",
 		]
+		if let token = nextPageToken {
+			request.parameters?["pagetoken"] = token
+		}
 		request.encoding = URLEncoding.queryString
 	}
 }

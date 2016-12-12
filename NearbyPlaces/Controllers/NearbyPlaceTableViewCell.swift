@@ -51,8 +51,8 @@ class NearbyPlaceTableViewCell: UITableViewCell {
 			if let photo = self?.viewModel?.place.photo.value {
 				self?.placeImageView.image = photo
 			} else {
-				guard let received = self?.viewModel?.place.photoReceivedFromBackEnd else { return }
-				if received {
+				if let recieved = self?.viewModel?.place.photoReceivedFromBackEnd,
+					recieved == true {
 					self?.placeImageView.image = #imageLiteral(resourceName: "imageNotFound")
 				}
 			}

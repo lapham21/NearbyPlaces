@@ -26,14 +26,16 @@ class NearbyPlacesViewModel {
 	
 	//MARK: GooglePlaces
 	
-	func getNearbyPlaces(completion: @escaping () -> ()) {
+	func getNearbyPlaces(nextPageToken: String? = nil, completion: @escaping () -> ()) {
 		guard let location = LocationService.sharedInstance.location.value else { return }
-		
-		let placesRequest = PlacesRequest(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+		let token = nextPageToken ?? nil
+		let placesRequest = PlacesRequest(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude, nextPageToken: token)
 		placesRequest.getNearbyPlaces { [weak self] result in
 			switch result {
 			case .success(let nearbyPlaces):
-				self?.places = nearbyPlaces
+				for place in nearbyPlaces {
+					self?.places.append(place)
+				}
 				completion()
 			case .failure(let error):
 				guard let error = error else { return }
